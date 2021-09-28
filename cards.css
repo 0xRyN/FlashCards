@@ -1,0 +1,59 @@
+.scene {
+    padding: 5px;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 100px;
+    perspective: 600px;
+    display: inline-block;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+    transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 100px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 25px;
+}
+
+.front {
+    background-color: #a4508b;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+
+.back {
+    background-color: #a4508b;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 20%);
+
+    transform: rotateY(180deg);
+}
+
+.card-placeholder {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}

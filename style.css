@@ -1,0 +1,971 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInAnimationv2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+
+/* Menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.main {
+    font-size: 2rem;
+    margin: .5rem;
+}
+
+.main a{
+    text-decoration: none;
+    color: white;
+}
+
+.links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.links li {
+    list-style: none;
+}
+
+.links li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px 40px;
+    transition: background-color 1s;
+}
+
+.links li a:hover {
+    background-color: gray;
+}
+
+/* affichage de connexion */
+.ihold-messages {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 30px; 
+    color: indianred;
+}
+
+.ihold-messages a{
+     text-decoration: none;
+    color: indianred;
+}
+
+.ihold-messages a:hover{
+    text-decoration: underline;
+}
+
+/* affichage des catégories dans index */
+.indexCard{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.indexCard span{
+    display: inline-block;
+    width: 400px;
+    height: 3px;
+    background: black;
+    margin-top: -30px;
+    opacity: 0.4;
+}
+
+/* Creation/modification des cartes */
+.create{
+    position: absolute;
+    top: calc(25% - 50px);
+    left: calc(50% - 50px);
+    height: 150px;
+    width: 350px;
+    padding: 10px;
+    z-index: 2;
+}
+
+.create input[type=text]{
+    width: 250px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 10px;
+}
+
+#back{
+    margin-bottom: 20px;
+}
+
+.create input[name='description']{
+    margin-bottom: 10px;
+}
+
+.addCardForm span{
+    position: static;
+    font-size: 20px;
+    font-family: 'Exo', sans-serif;
+    color: #fff;
+    margin-left: -15px;  
+}
+
+.cat select {
+    margin-left: 40px;
+    margin-bottom: 5px;
+    background-color: #1a1735;
+    color: #bbb8e0;
+    padding: 2px;
+    width: 100px;
+    font-size: 15px;
+    border: 1px solid #1a1735;
+}
+
+.cat select:hover{
+    border: 1px solid black;
+}
+
+#textCreateNewCat{
+    margin-left: 15px;
+    color: lightsteelblue;
+    font-size: 20px;
+}
+
+/* affiche les paquets de cartes */
+.cardGame{
+    display: inline-block;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 15px;
+    height: 200px;
+    width: 350px;
+    background: #5353c6;
+    color: black;
+    transition: background 0.3s;
+    margin: 0 auto;
+}
+
+.colorTop{
+    background: #5cd65c;
+}
+
+.cDesc{
+    font-size: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.cardGame:hover>.cDesc{
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#cGame{
+    margin-top: 10px;
+}
+
+#cGame2{
+    margin-top: 15px;
+}
+
+.cardGame:hover{
+    cursor: pointer;
+    background: #333399;
+    transition: background 0.3s;
+}
+
+.colorTop:hover{
+    background: #2eb82e;
+}
+
+.likeGame{
+    float: right;
+    font-size: 20px;
+    color: azure;
+}
+
+.likeGame div{
+    margin-top: -25px;
+    margin-left: 43px;
+    color: #ff3333;
+}
+
+.noLikeGame div{
+    color: #ffe6e6;
+}
+
+.noGames{
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.noGames a{
+    text-decoration: none;
+    color: white;
+}
+
+.noGames a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* cookies finish game */
+.finishCurrentGame{
+    width: 60px;
+    height: 40px;
+    border: 0px;
+    font-size: 1.2rem;
+}
+
+.finishCurrentGame:hover{
+    cursor: pointer;
+}
+
+.finishCurrentGame[name='yesFinish']{
+    background: #cce0ff;
+    transition: background 0.3s;
+}
+
+.finishCurrentGame[name='noFinish']{
+    background: #ffe6e6;
+    transition: background 0.3s;
+}
+
+.finishCurrentGame[name='yesFinish']:hover{
+    background: #66a3ff;
+    transition: background 0.3s;
+}
+
+.finishCurrentGame[name='noFinish']:hover{
+    background: #ff6666;
+    transition: background 0.3s;
+}
+
+
+/* or register / or login */
+.orElse{
+    font-size: 1.5em;
+}
+
+.orElse a{
+    text-decoration: none;
+    color: black;
+}
+
+.orElse a:hover{
+    text-decoration: underline;
+}
+
+/* bouton logout */
+#logoutH{
+    color: red;
+}
+
+#logoutH:hover{
+    background-color: #ff8080;
+    transition: background-color 1s;
+}
+
+/* affiche les erreurs (carte existente etc...) */
+.errorExist{
+    text-align: center;
+    font-size: 1.5rem;
+    color: azure;
+}
+
+/* Bouton Previous/Next pour naviguer entre les cartes */
+.prevOrNext {
+    position:fixed;
+    width: 200px;
+    height: 35px;
+    background: #ffcc80;
+    border: 1px solid #ffcc80;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #331f00;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    padding: 6px;
+    transition: opacity 1s;
+    transition: background 0.5s ease;
+}
+
+.prevOrNext:hover{
+    background: #ffad33;
+    border: 1px solid #ffad33;
+    transition: background 0.5s ease;
+}
+
+#cNext{
+    left: 210px;
+}
+
+#rightB{
+    position: absolute;
+    margin-left: 40%;
+}
+
+#leftB{
+    position: absolute;
+    margin-left: 40%;
+}
+
+/* affiche le formulaire pour répondre aux cartes */
+.putInMiddle{
+    text-align: center;
+}
+
+.answerGame{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    text-align: center;
+    height: 350px;
+    width: 250px;
+    background: #302b63;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    color: black;
+}
+
+.answerGame input[type='text']{
+    border-radius: 4px;
+    padding: 5px;
+    border: 3px solid #c1bef4;
+    color: #aba6d8;
+    /*background-color: #ccccff;*/
+    background: #302b63;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    transition: border 0.3s;
+    
+}
+
+.answerGame input[type='text']:hover{
+    border-color: #837ce9;
+    transition: border 0.3s;
+}
+
+.answerGame:hover{
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+/* Corrige les bug d'affichage quand la taille de certaine question/jeux est différente */
+.checkPositionValid{
+    position: absolute;
+}
+
+/* page du compte */
+.changePage{
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+    margin-top: -30%;
+    color: #fff;
+}
+
+.changePage div{
+    display: block;
+    margin-left: 5px;
+    margin-top: 10px;
+    transition: background 0.5s;
+}
+
+.changePage span{
+    display: block;
+    width: 95%;
+    height: 1px;
+    background: #b3b3b3;
+    opacity: 0.4;
+    margin-top: 3px;
+    margin-left: 10px;;
+}
+
+.boxAcc:hover{
+    cursor: pointer;
+    background: #24243e;
+    transition: background 0.5s;
+}
+
+.butAcc{
+    margin-top: 20px;
+    margin-left: 20%;
+    width: 200px;
+    height: 50px;
+    background: #ff6666;
+    transition: background 0.5s;
+    border: 0px;
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+}
+
+.butAcc:hover{
+    background: #ff1a1a;
+    transition: background 0.5s;
+    cursor: pointer;
+}
+
+.infoAcc{
+    position: relative;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.updateAcc{
+    font-family: 'Exo', sans-serif;
+    color: white;
+    font-size: 2rem;
+    margin-top: -100px;
+}
+
+.updateAcc input[type='text']{
+    margin-top: 40px;
+    font-size: 1.5rem;
+    height: 35px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.updateAcc input[type='submit']{
+    margin-left: 20px;
+    width: 200px;
+    height: 33px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #9c8563;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: opacity 1s;
+    transition: background 0.5s;
+    transition: color 0.5s;
+}
+
+.updateAcc input[type='submit']:hover{
+    background: #fff2e6;
+    color: #5d503c;
+    transition: color 0.5s;
+    transition: background 0.5s;
+}
+
+/* flèche de retour présente dans certains fichiers */
+.returnSymbol{
+    position: absolute;
+    font-size: 50px;
+    display: block;
+    margin-left: 10px;
+    margin-top: -15px;
+    font-family: 'Exo', sans-serif;
+    color: #ebe7e0;
+}
+
+.returnSymbol:hover{
+    cursor: pointer;
+}
+
+/* prendre un nv role */
+.boxRole{
+    margin-left: -10%;
+    font-size: 28px;
+    width: 300px;
+    height: 70px;
+    display: block;
+    text-align: center;
+    margin-top: -16px;
+    border-radius: 6px;
+}
+
+.boxRole:hover{
+    cursor: pointer;
+}
+
+.boxRole p{
+    padding-top: 5%;
+    color: #1a1a1a;
+}
+
+.updateAcc2{
+    font-family: 'Exo', sans-serif;
+    color: white;
+    font-size: 2rem;
+    margin-top: -100px;
+}
+
+.updateAcc2 input[type='submit']{
+    width: 300px;
+    height: 70px;
+    opacity: 0.5;
+    border: 0px;
+    color: #1a1a1a;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Exo', sans-serif;
+    font-size: 28px;
+    transition: opacity 0.5s;
+    
+}
+
+.updateAcc2 input[type='submit']:hover{
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.boxRole input[name='roleU']{
+    background: #999966;
+    margin-top: 30px;
+}
+
+.boxRole input[name='roleC']{
+    background: #ffa500;
+    margin-top: 50px;
+}
+
+.boxRole input[name='roleA']{
+    background: #ff1a1a;
+    margin-top: 70px;
+}
+
+.boxRole input[class='takeUserRole']{
+    opacity: 1;
+}
+
+.infRole{
+    position: absolute;
+    margin-top: 80px;
+    background: #9a95d0;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-left: -7px;
+}
+
+.infRole:hover{
+    cursor: auto;
+}
+
+.infRole ul{
+    margin-top: 0px;
+    font-size: 15px;
+    list-style: none;
+    margin-left: -30px;
+}
+
+.creatRole:hover~.ir1{
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.adminRole:hover~.ir2{
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.ir1{
+    width: 250px;
+    height: 40px;
+}
+
+.ir2{
+    width: 250px;
+}
+
+/* ajout de display */
+.disp {
+    font-size: 30px;
+    color: #d9d9d9;
+    text-align: center;
+}
+
+/* accepter/refuser les requete admin */
+.accept, .refuse {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.accept:hover{
+    color: #00b300;
+}
+
+.refuse:hover{
+    color: #ff3333;
+}
+
+.tabReq{
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.tabSpan{
+    position: absolute;
+    display: block;
+    margin-left: 20%;
+    margin-top: 38px;
+    width: 60%;
+    height: 2px;
+    background: #808080;
+}
+
+/* affiche les paquets de carte de l'utilisateur dans mygames */
+.showCardUser{
+    display: inline-block;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 15px;
+    height: 60px;
+    width: 350px;
+    background: #4da6ff;
+    color: #004080;
+    font-size: 35px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.showCardUser:hover{
+    cursor: pointer;
+    background: #99ccff;
+    transition: background 0.2s;
+}
+
+/* affiche les paquets de tous les utilisateurs dans mygames */
+.showCardAdmin{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 15px;
+    height: 150px;
+    width: 350px;
+    background: #4da6ff;
+    color: #004080;
+    font-size: 35px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.showCardAdmin:hover{
+    cursor: pointer;
+    background: #99ccff;
+    transition: background 0.2s;
+}
+
+/* delete un jeu de carte */
+.create input[name='delPack']{
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    background: #ff6666;
+    border: 0px;
+    transition: background 0.5s;
+}
+
+.create input[name='delPack']:hover{
+    cursor: pointer;
+    background: #ff1a1a;
+    transition: background 0.5s;
+}
+
+/* affichage des liens dans settings */
+.adminBox{
+    display: inline-block;
+    margin: 7px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 30px;
+    width: 150px;
+    background: #4d46a0;
+    color: #111023;
+    transition: background 0.3s;
+}
+
+.adminBox:hover{
+    cursor: pointer;
+    background: #302b63;
+    transition: background 0.3s;
+}
+
+/* organiser les tableaux */
+.tableOfUsers{
+    color: azure;
+    transition: color 0.5s;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-spacing: 0 7px;
+}
+
+.tableOfUsers th{
+    background: none;
+    transition: background 0.5s;
+}
+
+.tableOfUsers tr:nth-child(n+3){
+    background: #221f47;
+    transition: background 0.3s;
+}
+
+.tableOfUsers th:hover{
+    cursor: pointer;
+    background: #000000;
+    transition: background 0.5s;
+}
+
+.tableOfUsers tr:nth-child(even) {
+  background: #1a1735;
+    transition: background 0.5s;
+}
+
+.tableOfUsers tr:hover{
+    background: #675fb9;
+    transition: background 0.5s;
+}
+
+/* changer le role des utilisateurs */
+#promoteUp:hover{
+    background: #99ff99;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+#promoteDown:hover{
+    background: #ff9999;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+/* scoreboard */
+#yourScore{
+    background: #8883c9;
+}
+
+.bigSizedTable{
+    font-size: 3.5rem;
+}
+
+.posUser1{
+    color: gold;
+}
+
+.posUser2{
+    color: #989898;
+}
+
+.posUser3{
+    color: #cd7f32;
+}
+
+/* manage_users */
+#delUserAcc:hover{
+    cursor: pointer;
+    background: #ff4d4d;
+    transition: background 0.5s;
+}
+
+/* ganes.php  */
+.gamesLearn h1{
+    text-align: center;
+    color: antiquewhite;
+}
+
+.gamesLearn h1 a{
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.gamesLearn h1 a:hover{
+    text-decoration: underline;
+}
+
+.gamesLearn input[name='submitAnswer']{
+    width: 180px;
+    height: 50px;
+    font-size: 1rem;
+    border: 0px;
+    border-radius: 6px;
+    margin-left: 5%;
+    background: #ffffb3;
+    margin-bottom: 15px;
+    transition: background 0.3s;
+}
+
+.gamesLearn input[name='submitAnswer']:hover{
+    background: #ffff66;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.gamesLearn input[name='report']{
+    text-align: center;
+    width: 170px;
+    height: 30px;
+    font-size: 1rem;
+    border: 0px;
+    border-radius: 4px;
+    margin-left: 45.6%;
+    background: #ffc2b3;
+    transition: background 0.3s;
+}
+
+.gamesLearn input[name='report']:hover{
+    background: #ff8566;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.gamesLearn input[name='likeG']{
+    display: none;
+}
+
+.gamesLearn label[for='likeG']{
+    font-size: 3rem;
+    margin: 20px;
+    color: #ffe6e6;
+    transition: color 0.3s;
+}
+
+.gamesLearn label[for='likeG']:hover{
+    color: #ff6666;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.gamesLearn input[name='likeG']:checked~label[for='likeG']{
+    color: #ff3333;
+}
+
+/* flash */
+.finalElse{
+    margin-top: 150px;
+}
+
+/* tableau des catégories */
+.tableCat{
+    font-size: 2rem;
+    margin-top: -60px;
+    color: azure;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.tableCat th{
+    color: burlywood;
+}
+
+#delCat:hover{
+    color: #ff3333;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.delCatUp{
+    position: absolute;
+    margin-top: -300px;
+    font-size: 1rem;
+}
+
+/* difficulté des jeux */
+.level input {
+    display: none;
+}
+.level > label {
+    color: #ddd; /*grey*/
+    float: right;
+}
+.level {
+    margin-top: -20px;
+    margin-left: 10px;
+    font-size: 40px;
+    border: none;
+    float: left;
+}
+
+.level p{
+    margin-left: 10px;
+    font-size: 20px;
+    color: beige;
+}
+
+.level input{
+    display: none;
+}
+.level label{
+    margin-top: -30px;
+}
+.level>input:checked~label,
+.level:not(:checked)>label:hover,
+.level:not(:checked)>label:hover~label{
+    color: #ff8080;
+}
+
+.level label:hover{
+    cursor: pointer;
+}
+
+/* Erreur login/register */
+#errorLogin{
+    font-size: 13px;
+    color: #ff1a1a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
